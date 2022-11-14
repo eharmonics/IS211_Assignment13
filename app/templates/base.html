@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <title>Home</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/"><h1>Students & Quizzes</h1></a>
+            {% if session['username'] %}
+            <a href="/logout">Logout</a>
+            {% endif %}
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <div class="messages">
+            {% for category, message in messages %}
+              <div class="{{ category }}">
+                <p>{{ message }}</p>
+              </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        {% endwith %}
+
+        <div class="container">
+            {% block page %}{% endblock page %}
+        </div>
+        <script src="/static/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+{% if quiz %}
+
+<h2>{{ quiz.subject }}</h2>
+<br>
+<h3>Quiz Questions:</h3>
+<p>{{ quiz.questions }}</p>
+<br>
+
+<h2> Enter Marks here</h2>
+<form method="post">
+    <input type="text" name="quiz-id" style="display:none" value="{{ quiz.id }}">
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Marks</th>
+    </tr>
+    {% for st in students %}
+    
+    <tr>
+        <td>{{ st.first_name }}</td>
+        <td>{{ st.last_name }}</td>
+        <td><input type="text" name="ids" value="{{ st.id }}" style="display:none"><input type="text" name="marks"></td>
+    </tr>
+
+    {% endfor %}
+</table>
+<input type="submit">Submit
+<form>
+{% endif %}
+
+{% endblock page %}

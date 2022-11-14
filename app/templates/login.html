@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<div class="form">
+    <form method="post">
+        <p>Name:</p>
+        <input type="text" name="name" required>
+        <p>Password:</p>
+        <input type="password" name="password" required>
+        <br>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+{% endblock page %}

@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --main-color: rgb(21, 68, 255);
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 1px 1px rgb(170, 170, 255);
+}
+.container{
+    padding: 20px;
+}
+.tab-btn{
+    text-decoration: none;
+    background: var(--main-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid var(--main-color);
+}
+.form{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.form form p{
+    width: 200px;
+    margin: 5px;
+}
+.form form input{
+    border: none;
+    background: rgb(222, 227, 255);
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+}
+.form form input[type="submit"]{
+    background: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+}
+.inner-container{
+    display: flex;
+    flex-direction: column;
+}
+.table h1{
+    text-align: center;
+    color: var(--main-color);
+    margin: 20px;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+    min-width: 300px;
+}
+tr,td,th{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    text-align: left;
+}
+.messages{
+    position: fixed;
+    width: 80%;
+    text-align: center;
+}
+.success{
+    background: green;
+}
+.red{
+    background: red;
+}

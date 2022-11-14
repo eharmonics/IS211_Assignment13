@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<div class="table">
+    <h1>All Quizzes</h1>
+{% if quizzes %}
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Questions</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    {% for q in quizzes %}
+    
+    <tr>
+        <td>{{ q.subject }}</td>
+        <td>{{ q.questions }}</td>
+        <td>{{ q.time }}</td>
+        {% if q.id in done %}
+            <td><a href="/evaluate/{{q.id}}">Evaluate</td>
+        {% else %}
+            <td><a href="/results/{{q.id}}">Results!</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No quiz found!</p>
+{% endif %}
+<div>
+
+{% endblock page %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<div class="form">
+    <form method="post">
+        <p>Subject:</p>
+        <input type="text" name="subject" required>
+        <p>Quiz questions:</p>
+        <textarea type="text" style="padding:5px" name="questions" rows="20" cols="40" placeholder="Enter your question here..." required></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Add Quiz">
+    </form>
+</div>
+
+{% endblock page %}
